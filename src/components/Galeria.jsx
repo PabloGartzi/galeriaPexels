@@ -1,17 +1,31 @@
-import React from 'react'
+import { useEffect, useState } from "react";
+import {Formulario} from "./Formulario.jsx"
+import {GridGalery} from "./GridGalery.jsx"
 
 export const Galeria = () => {
-    const [categoria, setcategoria] = useState()
-    const categorias=[1,2,3,4,5]
-    
+    let [busqueda, setBusqueda] = useState("");
+    let [categorias, setCategoria] = useState([])
     return (    
-        /*FORMULARIO*/
-        <Formulario />
+        <>
+        <Formulario setBusqueda={setBusqueda} setCategoria={setCategoria}/>
+        <h2>El valor es: {busqueda}</h2>
+        <h2>Las categorías son:</h2>
+    
+        {categorias.map((cat) => (
+            <p key={cat}>{cat}</p>
+        ))}
+        {categorias.map((cat) => (
+            <GridGalery key={cat} categoria={cat}/>
+        ))}
+        <GridGalery busqueda={busqueda}/>
 
-        {categorias.map(()=> {
-            /*GRIDGALERY*/
-                /* cards */
-                /* paginación */
-        })}
+        </>
     )
 }
+
+
+        // {categorias.map(()=> {
+        //     /*GRIDGALERY*/
+        //         /* cards */
+        //         /* paginación */
+        // })}
