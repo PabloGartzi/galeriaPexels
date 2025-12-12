@@ -17,7 +17,6 @@ export const Galeria = () => {
         {categorias.map((cat) => (
             <GridGalery key={cat} categoria={cat}/>
         ))}
-        <GridGalery busqueda={busqueda}/>
         <Footer/>
         </>
     )
