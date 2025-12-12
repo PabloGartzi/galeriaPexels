@@ -7,7 +7,14 @@ export const Formulario = ({setBusqueda, setCategoria}) => {
         if (!input.trim()) return;
         setBusqueda(input);
         setInput("");
-        setCategoria((categorias) => {return [...categorias, input]})
+        setCategoria((categorias) => {
+          if(!categorias.includes(input)){
+            return [...categorias, input]
+          }
+          else{
+            return [...categorias]
+          }}
+        )
         console.log("Has hecho submit")
     }
     return (

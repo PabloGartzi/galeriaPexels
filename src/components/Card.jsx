@@ -5,7 +5,7 @@ export const Card = ({foto}) => {
     <div className="card">
       <img
         src={foto.src.medium}
-        alt={foto.alt}y
+        alt={foto.alt}
         className="foto-galeria"
       />
       <p>Autor: {foto.photographer}</p>
