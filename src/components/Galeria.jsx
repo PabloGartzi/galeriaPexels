@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {Formulario} from "./Formulario.jsx"
 import {GridGalery} from "./GridGalery.jsx"
+import { Footer } from "./Footer.jsx";
 
 export const Galeria = () => {
     let [busqueda, setBusqueda] = useState("");
@@ -8,7 +9,6 @@ export const Galeria = () => {
     return (    
         <>
         <Formulario setBusqueda={setBusqueda} setCategoria={setCategoria}/>
-        <h2>El valor es: {busqueda}</h2>
         <h2>Las categorías son:</h2>
     
         {categorias.map((cat) => (
@@ -18,7 +18,7 @@ export const Galeria = () => {
             <GridGalery key={cat} categoria={cat}/>
         ))}
         <GridGalery busqueda={busqueda}/>
-
+        <Footer/>
         </>
     )
 }

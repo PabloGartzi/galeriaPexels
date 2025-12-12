@@ -8,8 +8,8 @@ export const Formulario = ({setBusqueda, setCategoria}) => {
         setBusqueda(input);
         setInput("");
         setCategoria((categorias) => {
-          if(!categorias.includes(input)){
-            return [...categorias, input]
+          if(!categorias.includes(input.trim().toLowerCase())){
+            return [...categorias, input.trim().toLowerCase()]
           }
           else{
             return [...categorias]
